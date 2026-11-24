@@ -1,0 +1,34 @@
+{
+  "command": "npm run experiments",
+  "smoke": false,
+  "startedAt": "2026-11-10T18:37:11.236Z",
+  "finishedAt": "2026-11-10T18:37:51.248Z",
+  "note": "One uninterrupted invocation of E1, E2 and E3 after the code was frozen. Timestamps are for the record only; no timing is reported as performance.",
+  "environment": {
+    "node": "v25.9.0",
+    "platform": "win32 10.0.26200 x64",
+    "cpuCountVisible": 8,
+    "pglite": "0.5.16",
+    "hono": "4.13.17",
+    "postgresEngine": "PostgreSQL 18 as compiled into PGlite (WebAssembly); real PostgreSQL not used",
+    "stripe": "in-process simulator; Stripe never called"
+  },
+  "seeds": {
+    "e1": 20260101,
+    "e2": [
+      7001,
+      7002
+    ],
+    "e3Base": 30000
+  },
+  "headlines": {
+    "e1MainViolations": 0,
+    "e1Operations": 3574,
+    "e1CanaryViolations": 982,
+    "e2SubscriptionMismatches": {
+      "A: distinct seconds": 0,
+      "B: same-second ties": 10
+    },
+    "e3DecisionMismatches": 0
+  }
+}

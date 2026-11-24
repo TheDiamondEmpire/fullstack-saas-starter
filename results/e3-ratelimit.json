@@ -1,0 +1,570 @@
+{
+  "experiment": "E3 rate-limit accuracy",
+  "dataset": "synthetic arrival times on a simulated integer-millisecond clock; no wall-clock timing is measured",
+  "smoke": false,
+  "simulatedDurationMs": 600000,
+  "totals": {
+    "cases": 42,
+    "requestsOffered": 778674,
+    "decisionMismatchesVsReference": 0,
+    "casesOverCeiling": 0,
+    "maxOverCeiling": 0
+  },
+  "cases": [
+    {
+      "spec": {
+        "capacity": 10,
+        "refillPerMinute": 60
+      },
+      "pattern": "constant 0.5x refill",
+      "offered": 300,
+      "admitted": 300,
+      "referenceAdmitted": 300,
+      "decisionMismatches": 0,
+      "ceiling": 608,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 10,
+        "refillPerMinute": 60
+      },
+      "pattern": "constant 1x refill",
+      "offered": 600,
+      "admitted": 600,
+      "referenceAdmitted": 600,
+      "decisionMismatches": 0,
+      "ceiling": 609,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 10,
+        "refillPerMinute": 60
+      },
+      "pattern": "constant 2x refill",
+      "offered": 1200,
+      "admitted": 609,
+      "referenceAdmitted": 609,
+      "decisionMismatches": 0,
+      "ceiling": 609.5,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 10,
+        "refillPerMinute": 60
+      },
+      "pattern": "constant 10x refill",
+      "offered": 6000,
+      "admitted": 609,
+      "referenceAdmitted": 609,
+      "decisionMismatches": 0,
+      "ceiling": 609.9,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 10,
+        "refillPerMinute": 60
+      },
+      "pattern": "bursts of 3x capacity, once a minute",
+      "offered": 300,
+      "admitted": 100,
+      "referenceAdmitted": 100,
+      "decisionMismatches": 0,
+      "ceiling": 550,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 10,
+        "refillPerMinute": 60
+      },
+      "pattern": "poisson 1.5x refill",
+      "offered": 897,
+      "admitted": 607,
+      "referenceAdmitted": 607,
+      "decisionMismatches": 0,
+      "ceiling": 608.595,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 10,
+        "refillPerMinute": 60
+      },
+      "pattern": "hugging the token boundary",
+      "offered": 1807,
+      "admitted": 609,
+      "referenceAdmitted": 609,
+      "decisionMismatches": 0,
+      "ceiling": 609.001,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 5,
+        "refillPerMinute": 1
+      },
+      "pattern": "constant 0.5x refill",
+      "offered": 5,
+      "admitted": 5,
+      "referenceAdmitted": 5,
+      "decisionMismatches": 0,
+      "ceiling": 13,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 5,
+        "refillPerMinute": 1
+      },
+      "pattern": "constant 1x refill",
+      "offered": 10,
+      "admitted": 10,
+      "referenceAdmitted": 10,
+      "decisionMismatches": 0,
+      "ceiling": 14,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 5,
+        "refillPerMinute": 1
+      },
+      "pattern": "constant 2x refill",
+      "offered": 20,
+      "admitted": 14,
+      "referenceAdmitted": 14,
+      "decisionMismatches": 0,
+      "ceiling": 14.5,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 5,
+        "refillPerMinute": 1
+      },
+      "pattern": "constant 10x refill",
+      "offered": 100,
+      "admitted": 14,
+      "referenceAdmitted": 14,
+      "decisionMismatches": 0,
+      "ceiling": 14.9,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 5,
+        "refillPerMinute": 1
+      },
+      "pattern": "bursts of 3x capacity, once a minute",
+      "offered": 150,
+      "admitted": 14,
+      "referenceAdmitted": 14,
+      "decisionMismatches": 0,
+      "ceiling": 14,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 5,
+        "refillPerMinute": 1
+      },
+      "pattern": "poisson 1.5x refill",
+      "offered": 15,
+      "admitted": 14,
+      "referenceAdmitted": 14,
+      "decisionMismatches": 0,
+      "ceiling": 14.641,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 5,
+        "refillPerMinute": 1
+      },
+      "pattern": "hugging the token boundary",
+      "offered": 32,
+      "admitted": 14,
+      "referenceAdmitted": 14,
+      "decisionMismatches": 0,
+      "ceiling": 14,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 30,
+        "refillPerMinute": 30
+      },
+      "pattern": "constant 0.5x refill",
+      "offered": 150,
+      "admitted": 150,
+      "referenceAdmitted": 150,
+      "decisionMismatches": 0,
+      "ceiling": 328,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 30,
+        "refillPerMinute": 30
+      },
+      "pattern": "constant 1x refill",
+      "offered": 300,
+      "admitted": 300,
+      "referenceAdmitted": 300,
+      "decisionMismatches": 0,
+      "ceiling": 329,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 30,
+        "refillPerMinute": 30
+      },
+      "pattern": "constant 2x refill",
+      "offered": 600,
+      "admitted": 329,
+      "referenceAdmitted": 329,
+      "decisionMismatches": 0,
+      "ceiling": 329.5,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 30,
+        "refillPerMinute": 30
+      },
+      "pattern": "constant 10x refill",
+      "offered": 3000,
+      "admitted": 329,
+      "referenceAdmitted": 329,
+      "decisionMismatches": 0,
+      "ceiling": 329.9,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 30,
+        "refillPerMinute": 30
+      },
+      "pattern": "bursts of 3x capacity, once a minute",
+      "offered": 900,
+      "admitted": 300,
+      "referenceAdmitted": 300,
+      "decisionMismatches": 0,
+      "ceiling": 300,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 30,
+        "refillPerMinute": 30
+      },
+      "pattern": "poisson 1.5x refill",
+      "offered": 445,
+      "admitted": 327,
+      "referenceAdmitted": 327,
+      "decisionMismatches": 0,
+      "ceiling": 329.972,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 30,
+        "refillPerMinute": 30
+      },
+      "pattern": "hugging the token boundary",
+      "offered": 927,
+      "admitted": 329,
+      "referenceAdmitted": 329,
+      "decisionMismatches": 0,
+      "ceiling": 329.001,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 600,
+        "refillPerMinute": 600
+      },
+      "pattern": "constant 0.5x refill",
+      "offered": 3000,
+      "admitted": 3000,
+      "referenceAdmitted": 3000,
+      "decisionMismatches": 0,
+      "ceiling": 6598,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 600,
+        "refillPerMinute": 600
+      },
+      "pattern": "constant 1x refill",
+      "offered": 6000,
+      "admitted": 6000,
+      "referenceAdmitted": 6000,
+      "decisionMismatches": 0,
+      "ceiling": 6599,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 600,
+        "refillPerMinute": 600
+      },
+      "pattern": "constant 2x refill",
+      "offered": 12000,
+      "admitted": 6599,
+      "referenceAdmitted": 6599,
+      "decisionMismatches": 0,
+      "ceiling": 6599.5,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 600,
+        "refillPerMinute": 600
+      },
+      "pattern": "constant 10x refill",
+      "offered": 60000,
+      "admitted": 6599,
+      "referenceAdmitted": 6599,
+      "decisionMismatches": 0,
+      "ceiling": 6599.9,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 600,
+        "refillPerMinute": 600
+      },
+      "pattern": "bursts of 3x capacity, once a minute",
+      "offered": 18000,
+      "admitted": 6000,
+      "referenceAdmitted": 6000,
+      "decisionMismatches": 0,
+      "ceiling": 6000,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 600,
+        "refillPerMinute": 600
+      },
+      "pattern": "poisson 1.5x refill",
+      "offered": 9017,
+      "admitted": 6594,
+      "referenceAdmitted": 6594,
+      "decisionMismatches": 0,
+      "ceiling": 6598.27,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 600,
+        "refillPerMinute": 600
+      },
+      "pattern": "hugging the token boundary",
+      "offered": 18597,
+      "admitted": 6599,
+      "referenceAdmitted": 6599,
+      "decisionMismatches": 0,
+      "ceiling": 6599.01,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 3000,
+        "refillPerMinute": 3000
+      },
+      "pattern": "constant 0.5x refill",
+      "offered": 15000,
+      "admitted": 15000,
+      "referenceAdmitted": 15000,
+      "decisionMismatches": 0,
+      "ceiling": 32998,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 3000,
+        "refillPerMinute": 3000
+      },
+      "pattern": "constant 1x refill",
+      "offered": 30000,
+      "admitted": 30000,
+      "referenceAdmitted": 30000,
+      "decisionMismatches": 0,
+      "ceiling": 32999,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 3000,
+        "refillPerMinute": 3000
+      },
+      "pattern": "constant 2x refill",
+      "offered": 60000,
+      "admitted": 32999,
+      "referenceAdmitted": 32999,
+      "decisionMismatches": 0,
+      "ceiling": 32999.5,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 3000,
+        "refillPerMinute": 3000
+      },
+      "pattern": "constant 10x refill",
+      "offered": 300000,
+      "admitted": 32999,
+      "referenceAdmitted": 32999,
+      "decisionMismatches": 0,
+      "ceiling": 32999.9,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 3000,
+        "refillPerMinute": 3000
+      },
+      "pattern": "bursts of 3x capacity, once a minute",
+      "offered": 90000,
+      "admitted": 30000,
+      "referenceAdmitted": 30000,
+      "decisionMismatches": 0,
+      "ceiling": 30000,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 3000,
+        "refillPerMinute": 3000
+      },
+      "pattern": "poisson 1.5x refill",
+      "offered": 45027,
+      "admitted": 32998,
+      "referenceAdmitted": 32998,
+      "decisionMismatches": 0,
+      "ceiling": 32999.3,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 3000,
+        "refillPerMinute": 3000
+      },
+      "pattern": "hugging the token boundary",
+      "offered": 92997,
+      "admitted": 32999,
+      "referenceAdmitted": 32999,
+      "decisionMismatches": 0,
+      "ceiling": 32999.05,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 1,
+        "refillPerMinute": 7
+      },
+      "pattern": "constant 0.5x refill",
+      "offered": 35,
+      "admitted": 35,
+      "referenceAdmitted": 35,
+      "decisionMismatches": 0,
+      "ceiling": 69.001,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 1,
+        "refillPerMinute": 7
+      },
+      "pattern": "constant 1x refill",
+      "offered": 71,
+      "admitted": 36,
+      "referenceAdmitted": 36,
+      "decisionMismatches": 0,
+      "ceiling": 70.997,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 1,
+        "refillPerMinute": 7
+      },
+      "pattern": "constant 2x refill",
+      "offered": 140,
+      "admitted": 70,
+      "referenceAdmitted": 70,
+      "decisionMismatches": 0,
+      "ceiling": 70.505,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 1,
+        "refillPerMinute": 7
+      },
+      "pattern": "constant 10x refill",
+      "offered": 701,
+      "admitted": 64,
+      "referenceAdmitted": 64,
+      "decisionMismatches": 0,
+      "ceiling": 70.988,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 1,
+        "refillPerMinute": 7
+      },
+      "pattern": "bursts of 3x capacity, once a minute",
+      "offered": 30,
+      "admitted": 10,
+      "referenceAdmitted": 10,
+      "decisionMismatches": 0,
+      "ceiling": 64,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 1,
+        "refillPerMinute": 7
+      },
+      "pattern": "poisson 1.5x refill",
+      "offered": 93,
+      "admitted": 40,
+      "referenceAdmitted": 40,
+      "decisionMismatches": 0,
+      "ceiling": 69.257,
+      "overCeiling": 0
+    },
+    {
+      "spec": {
+        "capacity": 1,
+        "refillPerMinute": 7
+      },
+      "pattern": "hugging the token boundary",
+      "offered": 208,
+      "admitted": 59,
+      "referenceAdmitted": 59,
+      "decisionMismatches": 0,
+      "ceiling": 70,
+      "overCeiling": 0
+    }
+  ],
+  "endToEnd": {
+    "plan": "pro (600 requests per minute, burst 600)",
+    "requestsInFirstBurst": 650,
+    "admittedInFirstBurst": 600,
+    "expectedFirstBurst": 600,
+    "requestsAfterSixSimulatedSeconds": 70,
+    "admittedAfterSixSeconds": 60,
+    "expectedAfterSixSeconds": 60
+  }
+}

@@ -1,0 +1,280 @@
+{
+  "experiment": "E1 tenant-isolation fuzz",
+  "dataset": "synthetic: generated tenants, users and rows; no real data",
+  "engine": "PGlite (PostgreSQL compiled to WebAssembly, single connection). Real PostgreSQL was not used.",
+  "smoke": false,
+  "main": {
+    "label": "real",
+    "seed": 20260101,
+    "tenants": 6,
+    "operations": 3574,
+    "violations": 0,
+    "finalRowCountDrift": 0,
+    "byKind": {
+      "select_all": {
+        "attempts": 403,
+        "violations": 0,
+        "examples": []
+      },
+      "select_foreign_by_id": {
+        "attempts": 434,
+        "violations": 0,
+        "examples": []
+      },
+      "count_matches_own": {
+        "attempts": 423,
+        "violations": 0,
+        "examples": []
+      },
+      "update_foreign": {
+        "attempts": 409,
+        "violations": 0,
+        "examples": []
+      },
+      "delete_foreign": {
+        "attempts": 357,
+        "violations": 0,
+        "examples": []
+      },
+      "insert_foreign": {
+        "attempts": 245,
+        "violations": 0,
+        "examples": []
+      },
+      "insert_own_then_peer_cannot_see": {
+        "attempts": 144,
+        "violations": 0,
+        "examples": []
+      },
+      "join_across_tables": {
+        "attempts": 395,
+        "violations": 0,
+        "examples": []
+      },
+      "no_context_select": {
+        "attempts": 373,
+        "violations": 0,
+        "examples": []
+      },
+      "user_context_without_org": {
+        "attempts": 391,
+        "violations": 0,
+        "examples": []
+      }
+    },
+    "byTable": {
+      "organizations": {
+        "operations": 298,
+        "violations": 0
+      },
+      "memberships": {
+        "operations": 317,
+        "violations": 0
+      },
+      "invitations": {
+        "operations": 294,
+        "violations": 0
+      },
+      "projects": {
+        "operations": 280,
+        "violations": 0
+      },
+      "audit_log": {
+        "operations": 306,
+        "violations": 0
+      },
+      "billing_customers": {
+        "operations": 296,
+        "violations": 0
+      },
+      "subscriptions": {
+        "operations": 305,
+        "violations": 0
+      },
+      "invoices": {
+        "operations": 313,
+        "violations": 0
+      },
+      "usage_events": {
+        "operations": 293,
+        "violations": 0
+      },
+      "api_keys": {
+        "operations": 318,
+        "violations": 0
+      },
+      "notifications": {
+        "operations": 291,
+        "violations": 0
+      },
+      "flag_overrides": {
+        "operations": 294,
+        "violations": 0
+      },
+      "projects x memberships (cross join)": {
+        "operations": 395,
+        "violations": 0
+      }
+    }
+  },
+  "canary": {
+    "note": "Same harness and seed against a schema with RLS disabled on projects and an always-true policy on usage_events. Violations here are expected: they show the harness can see a leak.",
+    "label": "broken",
+    "seed": 20260101,
+    "tenants": 6,
+    "operations": 3574,
+    "violations": 982,
+    "finalRowCountDrift": 12,
+    "byKind": {
+      "select_all": {
+        "attempts": 403,
+        "violations": 68,
+        "examples": [
+          "usage_events: 5 foreign rows visible",
+          "usage_events: 5 foreign rows visible",
+          "projects: 5 foreign rows visible"
+        ]
+      },
+      "select_foreign_by_id": {
+        "attempts": 434,
+        "violations": 60,
+        "examples": [
+          "projects: 1 rows of the peer visible by explicit filter",
+          "usage_events: 1 rows of the peer visible by explicit filter",
+          "usage_events: 1 rows of the peer visible by explicit filter"
+        ]
+      },
+      "count_matches_own": {
+        "attempts": 423,
+        "violations": 64,
+        "examples": [
+          "usage_events: count 6 exceeds the 1 rows this tenant owns",
+          "projects: count 7 exceeds the 1 rows this tenant owns",
+          "usage_events: count 8 exceeds the 2 rows this tenant owns"
+        ]
+      },
+      "update_foreign": {
+        "attempts": 409,
+        "violations": 24,
+        "examples": [
+          "projects: 1 peer rows updated",
+          "projects: 1 peer rows updated",
+          "projects: 3 peer rows updated"
+        ]
+      },
+      "delete_foreign": {
+        "attempts": 357,
+        "violations": 17,
+        "examples": [
+          "projects: 1 peer rows deleted",
+          "projects: 2 peer rows deleted",
+          "projects: 1 peer rows deleted"
+        ]
+      },
+      "insert_foreign": {
+        "attempts": 245,
+        "violations": 69,
+        "examples": [
+          "projects: insert claiming the peer organization succeeded",
+          "usage_events: insert claiming the peer organization succeeded",
+          "usage_events: insert claiming the peer organization succeeded"
+        ]
+      },
+      "insert_own_then_peer_cannot_see": {
+        "attempts": 144,
+        "violations": 78,
+        "examples": [
+          "projects: a row just inserted by one tenant is visible to another",
+          "usage_events: a row just inserted by one tenant is visible to another",
+          "projects: a row just inserted by one tenant is visible to another"
+        ]
+      },
+      "join_across_tables": {
+        "attempts": 395,
+        "violations": 395,
+        "examples": [
+          "projects x memberships (cross join): 5 cross-joined rows from another tenant",
+          "projects x memberships (cross join): 5 cross-joined rows from another tenant",
+          "projects x memberships (cross join): 5 cross-joined rows from another tenant"
+        ]
+      },
+      "no_context_select": {
+        "attempts": 373,
+        "violations": 59,
+        "examples": [
+          "usage_events: 6 rows visible with no tenant context",
+          "projects: 7 rows visible with no tenant context",
+          "projects: 8 rows visible with no tenant context"
+        ]
+      },
+      "user_context_without_org": {
+        "attempts": 391,
+        "violations": 136,
+        "examples": [
+          "usage_events: 8 foreign rows visible to a user with no org selected",
+          "usage_events: tenant rows visible with no organization selected",
+          "usage_events: 10 foreign rows visible to a user with no org selected"
+        ]
+      }
+    },
+    "byTable": {
+      "organizations": {
+        "operations": 298,
+        "violations": 0
+      },
+      "memberships": {
+        "operations": 317,
+        "violations": 0
+      },
+      "invitations": {
+        "operations": 294,
+        "violations": 0
+      },
+      "projects": {
+        "operations": 280,
+        "violations": 287
+      },
+      "audit_log": {
+        "operations": 306,
+        "violations": 0
+      },
+      "billing_customers": {
+        "operations": 296,
+        "violations": 0
+      },
+      "subscriptions": {
+        "operations": 305,
+        "violations": 0
+      },
+      "invoices": {
+        "operations": 313,
+        "violations": 0
+      },
+      "usage_events": {
+        "operations": 293,
+        "violations": 288
+      },
+      "api_keys": {
+        "operations": 318,
+        "violations": 0
+      },
+      "notifications": {
+        "operations": 291,
+        "violations": 0
+      },
+      "flag_overrides": {
+        "operations": 294,
+        "violations": 0
+      },
+      "projects x memberships (cross join)": {
+        "operations": 395,
+        "violations": 395
+      }
+    },
+    "leakedTables": [
+      "projects",
+      "usage_events",
+      "projects x memberships (cross join)"
+    ]
+  }
+}

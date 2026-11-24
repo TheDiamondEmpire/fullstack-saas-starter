@@ -1,0 +1,45 @@
+{
+  "command": "npm run measure",
+  "startedAt": "2026-11-10T18:37:02.400Z",
+  "finishedAt": "2026-11-10T18:38:53.787Z",
+  "node": "v25.9.0",
+  "platform": "win32 10.0.26200 x64",
+  "steps": [
+    {
+      "step": "repository scan",
+      "command": "npm run scan:repo",
+      "exitCode": 0
+    },
+    {
+      "step": "licenses",
+      "command": "npm run licenses",
+      "exitCode": 0
+    },
+    {
+      "step": "colour contrast",
+      "command": "npm run contrast",
+      "exitCode": 0
+    },
+    {
+      "step": "dependency audit",
+      "command": "npm audit --omit=dev",
+      "exitCode": 0
+    },
+    {
+      "step": "experiments E1 to E3",
+      "command": "npm run experiments",
+      "exitCode": 0
+    },
+    {
+      "step": "compiled server smoke run",
+      "command": "npm run smoke:build",
+      "exitCode": 0
+    },
+    {
+      "step": "test record",
+      "command": "npm run test:record",
+      "exitCode": 0
+    }
+  ],
+  "note": "One uninterrupted invocation. Exit codes are those of each step; a non-zero step does not stop the later ones, so every result is recorded."
+}

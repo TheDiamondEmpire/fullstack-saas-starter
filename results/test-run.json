@@ -1,0 +1,127 @@
+{
+  "command": "npm run test:record",
+  "startedAt": "2026-11-10T18:38:02.302Z",
+  "node": "v25.9.0",
+  "vitest": "4.1.12",
+  "exitCode": 0,
+  "suites": [
+    {
+      "file": "tests/apikeys-audit.test.ts",
+      "tests": 25,
+      "passed": 25,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "file": "tests/auth.test.ts",
+      "tests": 32,
+      "passed": 32,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "file": "tests/billing-pure.test.ts",
+      "tests": 16,
+      "passed": 16,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "file": "tests/config.test.ts",
+      "tests": 5,
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "file": "tests/deploy.test.ts",
+      "tests": 10,
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "file": "tests/e2e.test.ts",
+      "tests": 5,
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "file": "tests/http.test.ts",
+      "tests": 29,
+      "passed": 29,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "file": "tests/migrations.test.ts",
+      "tests": 10,
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "file": "tests/orgs.test.ts",
+      "tests": 18,
+      "passed": 18,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "file": "tests/permissions.test.ts",
+      "tests": 74,
+      "passed": 74,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "file": "tests/platform.test.ts",
+      "tests": 23,
+      "passed": 23,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "file": "tests/postgres-adapter.test.ts",
+      "tests": 5,
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "file": "tests/repo-hygiene.test.ts",
+      "tests": 13,
+      "passed": 13,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "file": "tests/tenancy.test.ts",
+      "tests": 75,
+      "passed": 75,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "file": "tests/totp.test.ts",
+      "tests": 36,
+      "passed": 36,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "file": "tests/webhooks.test.ts",
+      "tests": 24,
+      "passed": 24,
+      "failed": 0,
+      "skipped": 0
+    }
+  ],
+  "total": {
+    "tests": 400,
+    "passed": 400,
+    "failed": 0,
+    "skipped": 0
+  }
+}

@@ -1,0 +1,209 @@
+{
+  "method": "WCAG 2.x relative luminance contrast ratio; threshold 4.5:1 for normal text",
+  "note": "Colour pairs only: not a test of the console for accessibility.",
+  "schemes": [
+    {
+      "scheme": "light",
+      "pairs": [
+        {
+          "foreground": "ink",
+          "background": "bg",
+          "foregroundHex": "#101828",
+          "backgroundHex": "#f7f8fa",
+          "use": "body text on the page",
+          "ratio": 16.7,
+          "passesAA4_5": true
+        },
+        {
+          "foreground": "ink",
+          "background": "panel",
+          "foregroundHex": "#101828",
+          "backgroundHex": "#ffffff",
+          "use": "text in cards and the header",
+          "ratio": 17.75,
+          "passesAA4_5": true
+        },
+        {
+          "foreground": "muted",
+          "background": "bg",
+          "foregroundHex": "#475467",
+          "backgroundHex": "#f7f8fa",
+          "use": "secondary text on the page",
+          "ratio": 7.23,
+          "passesAA4_5": true
+        },
+        {
+          "foreground": "muted",
+          "background": "panel",
+          "foregroundHex": "#475467",
+          "backgroundHex": "#ffffff",
+          "use": "secondary text in cards",
+          "ratio": 7.69,
+          "passesAA4_5": true
+        },
+        {
+          "foreground": "accent-ink",
+          "background": "accent",
+          "foregroundHex": "#ffffff",
+          "backgroundHex": "#1d4ed8",
+          "use": "label of a primary button",
+          "ratio": 6.7,
+          "passesAA4_5": true
+        },
+        {
+          "foreground": "accent",
+          "background": "panel",
+          "foregroundHex": "#1d4ed8",
+          "backgroundHex": "#ffffff",
+          "use": "outline and underline accents on cards",
+          "ratio": 6.7,
+          "passesAA4_5": true
+        },
+        {
+          "foreground": "danger",
+          "background": "panel",
+          "foregroundHex": "#b42318",
+          "backgroundHex": "#ffffff",
+          "use": "error text and destructive buttons in cards",
+          "ratio": 6.57,
+          "passesAA4_5": true
+        },
+        {
+          "foreground": "danger",
+          "background": "bg",
+          "foregroundHex": "#b42318",
+          "backgroundHex": "#f7f8fa",
+          "use": "error text on the page",
+          "ratio": 6.19,
+          "passesAA4_5": true
+        },
+        {
+          "foreground": "ok",
+          "background": "panel",
+          "foregroundHex": "#067647",
+          "backgroundHex": "#ffffff",
+          "use": "success text in cards",
+          "ratio": 5.69,
+          "passesAA4_5": true
+        },
+        {
+          "foreground": "ok",
+          "background": "bg",
+          "foregroundHex": "#067647",
+          "backgroundHex": "#f7f8fa",
+          "use": "success text on the page",
+          "ratio": 5.36,
+          "passesAA4_5": true
+        }
+      ]
+    },
+    {
+      "scheme": "dark",
+      "pairs": [
+        {
+          "foreground": "ink",
+          "background": "bg",
+          "foregroundHex": "#f5f5f6",
+          "backgroundHex": "#0c111d",
+          "use": "body text on the page",
+          "ratio": 17.31,
+          "passesAA4_5": true
+        },
+        {
+          "foreground": "ink",
+          "background": "panel",
+          "foregroundHex": "#f5f5f6",
+          "backgroundHex": "#161b26",
+          "use": "text in cards and the header",
+          "ratio": 15.81,
+          "passesAA4_5": true
+        },
+        {
+          "foreground": "muted",
+          "background": "bg",
+          "foregroundHex": "#b6bcc8",
+          "backgroundHex": "#0c111d",
+          "use": "secondary text on the page",
+          "ratio": 9.89,
+          "passesAA4_5": true
+        },
+        {
+          "foreground": "muted",
+          "background": "panel",
+          "foregroundHex": "#b6bcc8",
+          "backgroundHex": "#161b26",
+          "use": "secondary text in cards",
+          "ratio": 9.04,
+          "passesAA4_5": true
+        },
+        {
+          "foreground": "accent-ink",
+          "background": "accent",
+          "foregroundHex": "#0c111d",
+          "backgroundHex": "#7aa2ff",
+          "use": "label of a primary button",
+          "ratio": 7.58,
+          "passesAA4_5": true
+        },
+        {
+          "foreground": "accent",
+          "background": "panel",
+          "foregroundHex": "#7aa2ff",
+          "backgroundHex": "#161b26",
+          "use": "outline and underline accents on cards",
+          "ratio": 6.92,
+          "passesAA4_5": true
+        },
+        {
+          "foreground": "danger",
+          "background": "panel",
+          "foregroundHex": "#ff8a80",
+          "backgroundHex": "#161b26",
+          "use": "error text and destructive buttons in cards",
+          "ratio": 7.55,
+          "passesAA4_5": true
+        },
+        {
+          "foreground": "danger",
+          "background": "bg",
+          "foregroundHex": "#ff8a80",
+          "backgroundHex": "#0c111d",
+          "use": "error text on the page",
+          "ratio": 8.26,
+          "passesAA4_5": true
+        },
+        {
+          "foreground": "ok",
+          "background": "panel",
+          "foregroundHex": "#6ee7a8",
+          "backgroundHex": "#161b26",
+          "use": "success text in cards",
+          "ratio": 11.21,
+          "passesAA4_5": true
+        },
+        {
+          "foreground": "ok",
+          "background": "bg",
+          "foregroundHex": "#6ee7a8",
+          "backgroundHex": "#0c111d",
+          "use": "success text on the page",
+          "ratio": 12.27,
+          "passesAA4_5": true
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "pairs": 20,
+    "passing": 20,
+    "lowest": {
+      "foreground": "ok",
+      "background": "bg",
+      "foregroundHex": "#067647",
+      "backgroundHex": "#f7f8fa",
+      "use": "success text on the page",
+      "ratio": 5.36,
+      "passesAA4_5": true
+    }
+  }
+}

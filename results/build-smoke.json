@@ -1,0 +1,32 @@
+{
+  "what": "npm run build, then the compiled server (node dist/server/main.js) started with an in-memory PGlite database and the simulator, queried over localhost, then stopped",
+  "distFiles": 44,
+  "distBytes": 236406,
+  "endpoints": {
+    "/healthz": {
+      "status": 200,
+      "bytes": 15
+    },
+    "/readyz": {
+      "status": 200,
+      "bytes": 38
+    },
+    "/": {
+      "status": 200,
+      "bytes": 821
+    },
+    "/app.js": {
+      "status": 200,
+      "bytes": 24952
+    },
+    "/style.css": {
+      "status": 200,
+      "bytes": 3494
+    },
+    "POST /api/v1/auth/signup": {
+      "status": 202
+    }
+  },
+  "allOk": true,
+  "note": "This runs the compiled output only. The Docker image, the compose stack and the Terraform were never built, run or applied."
+}
